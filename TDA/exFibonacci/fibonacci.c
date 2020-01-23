@@ -2,6 +2,7 @@
 #include <time.h>
 #include <stdlib.h>
 
+// RUN SCRIPT WITH gnuplot --persist script.gp
 
 void save_in_file(double array[], int lim){
     FILE *fp;
