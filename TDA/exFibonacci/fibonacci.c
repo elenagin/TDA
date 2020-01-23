@@ -2,6 +2,8 @@
 #include <time.h>
 #include <stdlib.h>
 
+//https://www.youtube.com/watch?v=9k-l_ol9jok
+
 int fibonacci_recursive(int n)
 {
     if (n <= 1)
@@ -23,21 +25,29 @@ void fibonacci_iteration(int lim)
 
 int main(void){
     int lim, c, i=0;
-    clock_t start_t, end_t, total_t;
-
-    start_t = clock();
-    printf("Starting of the program, start_t = %ld\n", start_t);
+    clock_t start, end, total;
+    double cpu_time_used_I, cpu_time_used_R;
 
     printf("\nIngresa el límite de tu serie: ");
     scanf("%d", &lim);
     system("clear");
+
     printf("Fibonacci Iteration\n");
+    start = clock();
     fibonacci_iteration(lim);
+    end = clock();
+    cpu_time_used_I = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\nIteration took %f seconds to execute \n", cpu_time_used_I);
+
     printf("\n\nFibonacci Recursive: \n");
+    start = clock();
     for (c = 1; c <= lim; c++){
         printf("%d ", fibonacci_recursive(i));
         i++;
     }
-    printf("\n\n");
+    end = clock();
+    cpu_time_used_R = ((double) (end - start)) / CLOCKS_PER_SEC;
+    printf("\nRecursive took %f seconds to execute \n", cpu_time_used_R);
+    printf("\n");
     return 0;
 }
