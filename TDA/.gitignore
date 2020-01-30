@@ -4,8 +4,12 @@
 .LSOverride
 
 #Files
-../MICROS/
 tda.mov
+
+#Folders
+dir_to_ignore/
+../NETWORKS/
+../MICROS/
 
 # Thumbnails
 ._*
