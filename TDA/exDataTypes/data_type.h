@@ -25,6 +25,8 @@ void data_type()
     else if (atof(input) != 0 && strchr(input, '.') != NULL)
         printf("Float %d\n", Float);
 
-    else
+    else if (atoi(input) != 0)
         printf("Int %d\n", Int);
+
+
 }
